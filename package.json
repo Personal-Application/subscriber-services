@@ -4,18 +4,30 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/bin/www"
+    "build": "tsc -p .",
+    "start": "node dist/server.js",
+    "dev_windows": "nodemon src/server.ts"
   },
   "dependencies": {
+    "@types/config": "0.0.36",
+    "@types/cors": "^2.8.6",
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^14.0.23",
+    "config": "^3.3.1",
     "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
-    "express": "^4.16.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "http-errors": "^1.6.3",
     "jade": "^1.11.0",
-    "morgan": "^1.9.1",
-    "nodemon": "^2.0.4"
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/express": "^4.17.7",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   }
 }
