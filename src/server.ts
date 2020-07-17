@@ -5,7 +5,7 @@ import config from 'config';
 import dotenv  from 'dotenv';
 
 import subscriberRouter from './routes/SubscriberRouter';
-import ApiController from './controller/ApiController'
+import ApiController from './controllers/ApiController'
 
 var app = express();
 const api = new ApiController();
@@ -15,6 +15,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
+
+
 app.use(config.get("apiPrefix") + "subscriber", subscriberRouter);
 
 // handle non existent routes
@@ -23,6 +25,6 @@ app.get('*', (req, res) => {
 });
 
 // Listener
-const port = 3000; //Or port from env (process.env.PORT)
+const port = process.env.PORT || 3000; //Or port from env (process.env.PORT)
 app.listen(port, () => console.log('Server Running. Listening on port ' + port));
 
