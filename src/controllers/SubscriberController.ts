@@ -23,8 +23,7 @@ export default class SubscriberController extends ApiController {
             await new Promise(resolve => { 
                 //Check list if phone number exist
                 for (let i = 0; i < subscriberList.length; i++) {
-                    const subscriberPhoneNumber = subscriberList[i].phoneNumber;
-                    if (subscriberPhoneNumber == phoneNumber) {
+                    if ( subscriberList[i].phoneNumber == phoneNumber) {
                         let subscriberDetails:any = subscriberList[i];
                         return res.type('application/json').status(this.HTTP_OK).send(this.response(subscriberDetails, this.HTTP_OK, 'Subscriber Found'));   
                     }
