@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc -p .",
     "start": "node dist/server.js",
-    "dev_windows": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts"
   },
   "dependencies": {
     "@types/config": "0.0.36",
